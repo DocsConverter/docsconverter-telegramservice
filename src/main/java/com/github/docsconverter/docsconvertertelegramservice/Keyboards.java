@@ -23,6 +23,7 @@ public class Keyboards {
     public static InlineKeyboardMarkup getTextKeyboard(){
         List<InlineKeyboardButton> buttons = List.of(
                 createInlineKeyboardButton("To txt", "to_txt"),
+                createInlineKeyboardButton("To pdf", "to_pdf"),
                 createInlineKeyboardButton("Cancel", "cancel"));
 
         return setInline(Collections.singletonList(buttons));
