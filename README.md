@@ -1,6 +1,6 @@
 ## Docs Converter convert Image, Docs, Photo to different format
 
-### It's deployed to [Heroku](https://docsconverter-telegramservice)
+### It's deployed to [Heroku](http://heroku.com)
 
 Use modular architecture:
 1. docsconverter-telegramservice receive task and send as message json on RabbitMQ queue.
@@ -14,6 +14,7 @@ Project stack:
 - RabbitMQ
 - Jackson
 - Commons IO
+- Heroku
 - [Telegram Bot Library for Spring Boot](https://github.com/xabgesagtx/telegram-spring-boot-starter)
 
 [Document icon by Icons8](https://icons8.com/icons/set/document)
