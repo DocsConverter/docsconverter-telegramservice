@@ -189,7 +189,7 @@ public class Bot extends TelegramLongPollingBot {
         try {
             execute(getDocument(chatId, name, url));
         } catch (TelegramApiException | IOException e) {
-            log.error("CHAT_ID = {} -- SEND DOCUMENT WITH NAME = {}, URL = {}", chatId, name, url);
+            log.error("CHAT_ID = {} -- ERROR SEND DOCUMENT WITH NAME = {}, URL = {}", chatId, name, url);
             throw new IllegalStateException(e);
         }
     }

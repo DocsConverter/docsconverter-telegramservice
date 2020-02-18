@@ -1,7 +1,6 @@
 package com.github.docsconverter.docsconvertertelegramservice.util;
 
 import com.github.docsconverter.docsconvertertelegramservice.enums.FileType;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.telegram.telegrambots.meta.api.methods.GetFile;
 import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
@@ -12,8 +11,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
 import java.util.List;
 
@@ -49,16 +46,9 @@ public class BotUtil {
     }
 
     public static SendDocument getDocument(long chatId, String name, String url) throws IOException {
-        InputStream stream = new URL(url).openStream();
-
-        if(stream.available() > 0) {
-
             return new SendDocument()
                     .setChatId(chatId)
-                    .setDocument(name, stream);
-        }
-
-        return null;
+                    .setDocument(name, new URL(url).openStream());
     }
 
     public static GetFile getFile(String fileId) {

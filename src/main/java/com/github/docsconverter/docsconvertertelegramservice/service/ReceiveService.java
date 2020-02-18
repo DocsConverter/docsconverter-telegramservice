@@ -32,16 +32,21 @@ public class ReceiveService {
             return;
         }
 
-        switch (task.getType()){
-            case TEXT:
-                bot.sendMessage(task.getChatId(), task.getText());
-                break;
-            case PHOTO:
-                bot.sendPhoto(task.getChatId(), getName(task.getUrl()), task.getUrl());
-                break;
-            case DOCUMENT:
-            case BOOK:
-                bot.sendDocument(task.getChatId(), getName(task.getUrl()), task.getUrl());
+        try {
+            switch (task.getType()) {
+                case TEXT:
+                    bot.sendMessage(task.getChatId(), task.getText());
+                    break;
+                case PHOTO:
+                    bot.sendPhoto(task.getChatId(), getName(task.getUrl()), task.getUrl());
+                    break;
+                case DOCUMENT:
+                case BOOK:
+                    bot.sendDocument(task.getChatId(), getName(task.getUrl()), task.getUrl());
+            }
+        } catch (Exception e){
+            bot.sendMessage(task.getChatId(), "There was a problem");
+            e.printStackTrace();
         }
     }
 }
