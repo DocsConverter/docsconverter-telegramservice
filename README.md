@@ -1,6 +1,6 @@
 ## Docs Converter convert Image, Docs, Photo to different format
 
-### It's deployed to [Heroku](http://heroku.com)
+### It's deployed to [Heroku](http://heroku.com) AS Telegram bot @docsconverterbot 
 
 Use modular architecture:
 1. docsconverter-telegramservice receive task and send as message json on RabbitMQ queue.
