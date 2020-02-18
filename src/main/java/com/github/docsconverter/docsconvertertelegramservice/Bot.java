@@ -90,6 +90,7 @@ public class Bot extends TelegramLongPollingBot {
 
                         sendMessage(chatId, "It's file type not supported!");
                 }
+
             }
         } else if(update.hasCallbackQuery()){
             Message message = update.getCallbackQuery().getMessage();

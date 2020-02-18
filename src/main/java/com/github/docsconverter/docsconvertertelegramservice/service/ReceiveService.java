@@ -43,6 +43,9 @@ public class ReceiveService {
                 case DOCUMENT:
                 case BOOK:
                     bot.sendDocument(task.getChatId(), getName(task.getUrl()), task.getUrl());
+                    break;
+                case UNDEFINED:
+                    bot.sendMessage(task.getChatId(), "Result file type is undefined");
             }
         } catch (Exception e){
             bot.sendMessage(task.getChatId(), "There was a problem");
