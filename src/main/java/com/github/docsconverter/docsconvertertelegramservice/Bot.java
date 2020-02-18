@@ -137,7 +137,11 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public void sendHelp(long chatId){
-        sendMessage(chatId, "DocsConverterBot convert Docs, Text and Photo to different formats");
+        sendMessage(chatId, "DocsConverterBot convert Docs, Text and Photo to different formats\n" +
+                "Type /start for receive this help\n" +
+                "" +
+                "Bot supported this operations:" +
+                "");
     }
 
     public void deleteMessage(long chatId, int messageId){
