@@ -138,7 +138,10 @@ public class Bot extends TelegramLongPollingBot {
 
     public void sendHelp(long chatId){
         sendMessage(chatId, "Send me photo, text or document\n" +
-                "and I will try to convert it");
+                "and I will try to convert it.\n" +
+                "I support this convert:\n" +
+                "TEXT -> PDF / TXT\n" +
+                "IMAGE -> PDF");
     }
 
     public void deleteMessage(long chatId, int messageId){
