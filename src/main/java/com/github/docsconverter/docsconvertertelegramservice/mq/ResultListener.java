@@ -5,6 +5,8 @@ import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+import static com.github.docsconverter.docsconvertertelegramservice.mq.RabbitConfiguration.CONVERT_RESULT_QUEUE;
+
 @EnableRabbit
 @Component
 public class ResultListener {
@@ -15,7 +17,7 @@ public class ResultListener {
         this.receiveService = receiveService;
     }
 
-    @RabbitListener(queues = "convert_result")
+    @RabbitListener(queues = CONVERT_RESULT_QUEUE)
     public void processConvertResult(String message) {
         receiveService.receive(message);
     }

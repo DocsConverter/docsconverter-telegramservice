@@ -12,7 +12,7 @@ import static com.github.docsconverter.docsconvertertelegramservice.util.TaskUti
 
 @Service
 public class ReceiveService {
-    private Logger logger = LoggerFactory.getLogger(ResultListener.class);
+    private Logger logger = LoggerFactory.getLogger(ReceiveService.class);
 
     private final Bot bot;
 
