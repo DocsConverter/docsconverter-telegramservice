@@ -137,18 +137,8 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public void sendHelp(long chatId){
-        sendMessage(chatId, "@docsconverterbot convert\n" +
-                "Docs, Text and Photo to different formats.\n\n" +
-                "Commands:\n" +
-                "/start for receive this help\n\n" +
-                "Bot supported this operations:\n" +
-                "Text message -> TXT/PDF file\n" +
-                "Image (as Document or Photo) -> PDF file\n\n" +
-                "The Bot is constantly being improved,\n" +
-                "please report bugs to \n" +
-                "http://github.com/DocsConverter\n\n" +
-                "Developed by WitalijBukatkin\n" +
-                "vitaliy.bukatkin@gmail.com");
+        sendMessage(chatId, "Send me photo, text or document\n" +
+                "and I will try to convert it");
     }
 
     public void deleteMessage(long chatId, int messageId){
